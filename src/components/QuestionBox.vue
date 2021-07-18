@@ -16,7 +16,7 @@
               {{answer}}
             </b-list-group-item> --> 
             <b-list-group-item 
-            @click="selectAnswer(index)" :class="answerClass(index)">
+            @click="selectAnswer(index)" :disabled="answered && selectedIndex !== index" :class="answerClass(index)"  >
             {{answer}}
           </b-list-group-item>
             </b-list-group>
@@ -60,6 +60,7 @@
         this.answered = false
         this.shuffleAnswers()
       }
+      
     }
   },
    methods:{
